@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Tres en raya</title>
+</head>
+
+<body>
+<main>
+    <header class="header">
+        <figure class="header_fig">
+            <img class="header__fig-icon" src="./images/game_icon.png" alt="Game Icon">
+        </figure>
+        <h1 class="header__h1">Tres en raya</h1>
+    </header>
+
+    <div class="grid_tablero">
+        <button class="grid_button cell0" id="cell0"></button>
+        <button class="grid_button cell1" id="cell1"></button>
+        <button class="grid_button cell2" id="cell2"></button>
+        <button class="grid_button cell3" id="cell3"></button>
+        <button class="grid_button cell4" id="cell4"></button>
+        <button class="grid_button cell5" id="cell5"></button>
+        <button class="grid_button cell6" id="cell6"></button>
+        <button class="grid_button cell7" id="cell7"></button>
+        <button class="grid_button cell8" id="cell8"></button>
+    </div>
+    <div class="scoreboard">
+        <div class="player active_player" id="scorePlayer1">
+            <p class="text">Jugador 1</p>
+            <p id="score_1">0</p>
+        </div>
+        <div class="games">
+            <p class="text">Partidas</p>
+            <p id="games">0</p>
+        </div>
+        <div class="player" id="scorePlayer2">
+            <p class="text">Jugador 2</p>
+            <p id="score_2">0</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <button type="button" onclick="nextGame()" class="button_start" id="nextButton">
+            <p class="text">Siguiente Partida</p>
+        </button>
+        <button type="button" onclick="window.location.reload();" class="button_reset" id="cleanButton">
+            <p class="text">Reiniciar Partida</p>
+        </button>
+    </footer>
+</main>
+    <script src="./code.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+*{
+    /*  outline:  1px solid red; */
+    /* Define las fuentes a usar en el proyercto */
+    font-family: Arial, Helvetica, sans-serif;
+    /*La unidad relativa será siempre igual a 12px*/
+    font-size: 62.5%; /*rem --> 1rem = 10px
+    /* font-size: 12px; */
+    /* El borde de la caja se calculará como parte de la anchura y de la altura de la misma */
+    box-sizing: border-box;
+    /* Eliminamos todos los márgenes y los espacios para definirlos desde 0 */
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    background-color: aquamarine;
+}
+.header {
+    width: 100%;
+    height: 100px;
+    margin-right: auto;
+    background-color: #1e90ff;
+    display: grid;
+    padding-left: 20px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background: linear-gradient(#1e90ff, #63abf3);
+    grid-template-areas: "image title title title";
+
+}
+
+.header_fig{
+    grid-area: image;
+}
+
+.header__h1 {
+
+    grid-area: title;
+    font-size: 4rem;
+    letter-spacing: 3px;
+    margin: auto;
+    color: white;
+    width: 60%;
+    text-align: left;
+}
+
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: #1e90ff;
+    color: white;
+    padding: 20px;
+    display: grid;
+    grid-template-areas: "start reset";
+    justify-content: center;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    position : fixed;
+    bottom: 0;
+    background: linear-gradient(#63abf3, #1e90ff);
+}
+
+.button_start {
+    grid-area: start;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f5ce22;
+    color: #010703;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.button_reset {
+    grid-area: reset;
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f5ce22;
+    color: #010703;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+button{
+    border: none;
+    outline: none;
+}
+
+.grid_tablero{
+    display: grid;
+    grid-template-columns: [leftBorder] 33% [c1] 33% [c2] 33% [rightBorder];
+    grid-template-rows: [topBorder] 33% [r1] 33% [r2] 33% [bottomBorder]; 
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    padding: 10px;
+}
+
+.cell0{
+    grid-column: leftBorder / c1;
+    grid-row: topBorder / r1;
+    background-color: white;
+    border-bottom: 10px solid black;
+    border-right: 10px solid black;
+}
+
+.cell1{
+    grid-column: c1 / c2;
+    grid-row: topBorder / r1;
+    background-color: white;
+    border-bottom: 10px solid black;
+}    
+
+.cell2{
+    grid-column: c2 / rightBorder;
+    grid-row: topBorder / r1;
+    background-color: white;
+    border-bottom: 10px solid black;
+    border-left: 10px solid black;
+}    
+
+.cell3{
+    grid-column: leftBorder / c1;
+    grid-row: r1 / r2;
+    background-color: white;
+    border-right: 10px solid black;
+}    
+
+.cell4{
+    grid-column: c1 / c2;
+    grid-row: r1 / r2;
+    background-color: white;
+}    
+
+.cell5{
+    grid-column: c2 / rightBorder;
+    grid-row: r1 / r2;
+    background-color: white;
+    border-left: 10px solid black;
+}    
+
+.cell6{
+    grid-column: leftBorder / c1;
+    grid-row: r2 / bottomBorder;
+    background-color: white;
+    border-right: 10px solid black;
+    border-top: 10px solid black;
+}    
+
+.cell7{
+    grid-column: c1 / c2;
+    grid-row: r2 / bottomBorder;
+    background-color: white;
+    border-top: 10px solid black;
+}    
+
+.cell8{
+    grid-column: c2 / rightBorder;
+    grid-row: r2 / bottomBorder;
+    background-color: white;
+    border-left: 10px solid black;
+    border-top: 10px solid black;
+}
+
+.ticButton{
+    background-image: url(./images/tic.png);
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.tacButton{
+    background-image: url(./images/tac.png);
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.scoreboard{
+    height: 20%;
+    display: grid;
+    grid-template-areas: "player1 score player2";
+    justify-items: center;
+    justify-content: stretch;
+    color: white;
+}
+
+.player{
+    width: 80%;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: linear-gradient(#63abf3, black);
+    display: grid;
+    grid-template-areas: "text" "score";
+    justify-items: center;
+}
+
+.games{
+    width: 70%;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: linear-gradient(#63abf3, black);
+    display: grid;
+    grid-template-areas: "text" "score";
+    justify-items: center;
+}
+
+#score_1, #score_2, #games {
+    font-size: 5rem;
+}
+
+.text{
+    font-size: 2rem;
+}
+
+.active_player{
+    background: linear-gradient(#5be04f, black);   
+}
